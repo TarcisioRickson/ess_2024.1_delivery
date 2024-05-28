@@ -7,3 +7,13 @@ Scenario: Cadastro de usuário com e-mail já usado
   And o usuário preenche o campo Senha com "123456789"
   And o usuário clica no botão "Cadastrar"
   Then o sistema exibe uma mensagem de erro informando que o e-mail já está em uso
+
+Scenario: Cadastro de usuário com nome já usado
+  Given o usuário está na página "Registro" e o sistema já possui no seu banco de dados um usuário com o nome "Pedro"
+  When o usuário preenche o campo Nome com "Pedro"
+  And o usuário preenche o campo Email com "pedro@gmail.com"
+  And o usuário preenche o campo Telefone com "123456789"
+  And o usuário preenche o campo Endereço com "Rua das rosas, 09"
+  And o usuário preenche o campo Senha com "147258369"
+  And o usuário clica no botão "Cadastrar"
+  Then o sistema exibe uma mensagem de erro informando que o nome já está em uso
