@@ -1,4 +1,5 @@
 Feature: Manutenção de Clientes
+  A feature de manutenção de clientes permite que o sistema realize operações como cadastro, atualização, e remoção de clientes, garantindo a integridade e a validade dos dados inseridos.
 
 Scenario: Cadastro de usuário com e-mail já usado
   Given o usuário está na página "Registro" e o sistema já possui no seu banco de dados um usuário com o email "joãodasilva@gmail.com"
@@ -92,3 +93,9 @@ Scenario: Consulta de usuário por email
   When o usuário insere o email "jose@gmail.com"
   And o usuário clica no botão "Consultar"
   Then o sistema exibe os dados do cliente associado ao email
+
+Scenario: Consulta de usuário por nome
+  Given o usuário está na página "Consulta de Cliente"
+  When o usuário insere o nome "João"
+  And o usuário clica no botão "Consultar"
+  Then o sistema exibe os dados do cliente associado ao nome
