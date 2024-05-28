@@ -85,4 +85,4 @@ When o usuário seleciona um cliente na lista
 And o usuário clica no botão "Remover"
 And o sistema exibe uma mensagem de confirmação
 When o usuário cancela a remoção
-Then o sistema exibe uma mensagem de que a operação não foi realizada, não remove o cliente e retorna à página de manutenção sem alterações
+Then o sistema exibe uma mensagem de que a operação não foi realizada e retorna à página de manutenção sem alterações
