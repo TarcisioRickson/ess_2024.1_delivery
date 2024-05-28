@@ -86,3 +86,15 @@ And o usuário clica no botão "Remover"
 And o sistema exibe uma mensagem de confirmação
 When o usuário cancela a remoção
 Then o sistema exibe uma mensagem de que a operação não foi realizada, não remove o cliente e retorna à página de manutenção sem alterações
+
+Cenário: Cadastro de novo cliente
+Given o usuário está na página de cadastro
+When o usuário preenche os campos obrigatórios com dados válidos
+And clica em "Salvar"
+Then o cliente é cadastrado com sucesso
+
+Cenário: Remoção de cliente
+Given o usuário está na página de gerenciamento de clientes
+When o usuário seleciona um cliente e clica em "Remover"
+Then o cliente é removido do sistema
+
