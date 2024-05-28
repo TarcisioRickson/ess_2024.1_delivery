@@ -1,4 +1,9 @@
-Feature: Promoções
-As a restaurant owner,
-I want to manage promotions,
-So that I can attract more customers and increase sales.
+Scenario: Cadastro de usuário com e-mail já usado
+  Given o usuário está na página "Registro" e o sistema já possui no seu banco de dados um usuário com o email "joãodasilva@gmail.com"
+  When o usuário preenche o campo Email com "joãodasilva@gmail.com"
+  And o usuário preenche o campo Nome com "João"
+  And o usuário preenche o campo Telefone com "334449684"
+  And o usuário preenche o campo Endereço com "Rua das margaridas, 12"
+  And o usuário preenche o campo Senha com "123456789"
+  And o usuário clica no botão "Cadastrar"
+  Then o sistema exibe uma mensagem de erro informando que o e-mail já está em uso
